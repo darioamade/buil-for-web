@@ -55,7 +55,7 @@ section {
   // text-align: center;
   // position: relative;
   &:nth-child(1) {
-    background-color: rgba(0, 0, 0, 0.337);
+    background-color: rgba(0, 0, 0, 0.502);
   }
 
   &:nth-child(2) {
@@ -71,22 +71,53 @@ section {
     background-color: rgb(0, 251, 255);
   }
 }
-h1 {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-  color: white;
-  width: 100%;
-  left: 0;
-  font-size: calc(1rem + 3vw);
-}
 
 /* ----------------------------- Section-1 -----------------------------------*/
 .section-1 {
   position: relative;
   height: 100vh;
   width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  position: relative;
+  font-family: inherit;
+  font-size: 5vw;
+  font-weight: bold;
+  padding-left: 10vw;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+h1 .box {
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+  background: rgba(240, 14, 240, 0);
+  height: 1vw;
+  z-index: -1;
+}
+
+h1 .hi {
+  display: inline-block;
+}
+
+h3 {
+  position: relative;
+  font-family: inherit;
+  font-size: 1vw;
+  font-weight: 300;
+  padding-left: 10vw;
+  line-height: 1.6;
+  text-align: start;
+  width: 50%;
+  overflow: hidden;
+  color: #ffffff;
 }
 
 .bg-video {
@@ -107,96 +138,215 @@ h1 {
 
 /*-----------------------Navbar -------------*/
 .navbar {
-    --text: #FFFFFF;
+  --text: #ffffff;
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 8rem;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0);
-    z-index: 1;
-    &-logo {
-      width: 2rem;
-      height: 2rem;
-      background-image: url("/img/FAVICON2.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-  
-      margin-left: 2rem;
-      @media screen and (max-width: 768px) {
-        margin-left: 1rem;
-      }
-
-      border-radius: 50%;
-      border: none;
-      box-shadow: var(--shadow-dark);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 1;
+  &-logo {
+    width: 2rem;
+    height: 2rem;
+    background-image: url("/img/FAVICON2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: 2rem;
+    @media screen and (max-width: 768px) {
+      margin-left: 1rem;
     }
-    &-links {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: flex-start;
-      margin-right: 2rem;
-      @media screen and (max-width: 768px) {
-        margin-right: 1rem;
-      }
+
+    border-radius: 50%;
+    border: none;
+    box-shadow: var(--shadow-dark);
+  }
+  &-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: 2rem;
+    @media screen and (max-width: 768px) {
+      margin-right: 1rem;
     }
   }
-
+}
 
 ul li a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 1.9rem;
-    margin: 2rem;
-    font-weight: 300;
-    font-family: inherit;
-    text-transform: initial;
-    text-rendering: optimizeLegibility;
-    letter-spacing: 0px;
-    cursor: pointer;
-    transition: all 0.2s;
-    @media screen and (max-width: 1440px) {
-      font-size: 1.7rem;
-    }
-    @media screen and (max-width: 768px) {
-      font-size: 1.4rem;
-      margin: 1rem;
-    }
-    @media screen and (max-width: 450px) {
-      font-size: 1.2rem;
-      margin: 0.5rem;
-    }
-    @media screen and (max-width: 350px) {
-      font-size: 1rem;
-      margin: 0.5rem;
-    }
-  
-    &:hover {
-      color: var(--color-primary);
-    }
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.9rem;
+  margin: 2rem;
+  font-weight: 300;
+  font-family: inherit;
+  text-transform: initial;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0px;
+  cursor: pointer;
+  transition: all 0.2s;
+  @media screen and (max-width: 1440px) {
+    font-size: 1.7rem;
   }
-  
-  ul li {
-    list-style: none;
+  @media screen and (max-width: 768px) {
+    font-size: 1.4rem;
+    margin: 1rem;
   }
-  
-  li a {
-    text-decoration: none;
+  @media screen and (max-width: 450px) {
+    font-size: 1.2rem;
+    margin: 0.5rem;
   }
-  
-  nav li {
-    list-style: none;
-    &:hover {
-      border-bottom: 2px solid #000;
-      color: #000;
-    }
+  @media screen and (max-width: 350px) {
+    font-size: 1rem;
+    margin: 0.5rem;
   }
-  /*----------------------- EndNavbar --------*/
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+ul li {
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+}
+
+nav li {
+  list-style: none;
+  &:hover {
+    border-bottom: 2px solid #000;
+    color: #000;
+  }
+}
+/*----------------------- EndNavbar --------*/
+
+.scroll-down {
+  height: 50px;
+  width: 30px;
+  border: 1px solid #ccc;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.scroll-down:before,
+.scroll-down::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  border: 1px solid #ccc;
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -100%) rotate(45deg);
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll-down 1s ease-in-out infinite;
+  transition: all 0.2s;
+}
+
+.scroll-down::after {
+  top: 30%;
+  animation-delay: 0.3s;
+}
+
+@keyframes scroll-down {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    top: 90%;
+  }
+}
+
+/* -------------------- Footer------------------------------*/
+.footer {
+  height: 60vh;
+  scroll-snap-align: start;
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .btn-search {
+  padding: 1.8rem 4rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: #fff;
+  list-style: none;
+  background-color: #fe0f56;
+  text-decoration: none;
+  border: none;
+  margin-bottom: 4rem;
+  transition: all 0.2s;
+}
+.footer .btn-search:focus {
+  outline: none;
+}
+
+.footer .btn-search:hover {
+  background-color: #fff;
+  border: 2px solid #fe0f56;
+  color: #fe0f56;
+}
+h2 {
+  color: #444444;
+  letter-spacing: 0px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 44px;
+  margin-bottom: 4rem;
+  @media (max-width: 768px){
+    font-size: 24px;
+  }
+  @media (max-width: 550px){
+    font-size: 20px;
+  }
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  justify-content: space-around;
+  align-items: center;
+  @media screen and (max-width:768px){
+      padding: 0 4rem;
+  }
+}
+
+.search-icon {
+  fill: #444444;
+  widows: 2rem;
+  height: 2rem;
+}
+
+#iconClr {
+    fill: #444444;
+}
